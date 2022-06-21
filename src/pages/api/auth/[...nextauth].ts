@@ -19,7 +19,8 @@ export const authOptions: NextAuthOptions = {
           id: user.id,
         },
       });
-      session.user.role = dbUser?.role;
+      session.user = { id: user.id, role: dbUser?.role, ...dbUser };
+
       return session;
     },
   },
