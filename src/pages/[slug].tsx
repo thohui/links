@@ -14,14 +14,6 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
       notFound: true,
     };
   }
-
-  // TODO: track and add geolocation to the linkhit record
-  await prisma.linkHit.create({
-    data: {
-      link: { connect: { id: link.id } },
-    },
-  });
-
   // update total hits
   await prisma.link.update({
     data: {

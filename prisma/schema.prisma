@@ -37,18 +37,12 @@ model Session {
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
-enum Role {
-  USER
-  ADMIN
-}
-
 model User {
   id            String    @id @default(cuid())
   name          String?
   email         String?   @unique
   emailVerified DateTime?
   image         String?
-  role          Role      @default(USER)
   accounts      Account[]
   sessions      Session[]
   links         Link[]
@@ -63,20 +57,11 @@ model VerificationToken {
 }
 
 model Link {
-  id        String    @id @default(cuid())
-  slug      String    @unique
+  id        String   @id @default(cuid())
+  slug      String   @unique
   url       String
   userId    String
-  hits      Int       @default(0)
-  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
-  createdAt DateTime  @default(now())
-  linkHits  LinkHit[]
-}
-
-model LinkHit {
-  id          String   @id @default(cuid())
-  linkId      String
-  time        DateTime @default(now())
-  geoLocation String?
-  link        Link     @relation(fields: [linkId], references: [id])
+  hits      Int      @default(0)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
 }
