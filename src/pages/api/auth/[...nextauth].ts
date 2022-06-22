@@ -19,7 +19,7 @@ export const authOptions: NextAuthOptions = {
           id: user.id,
         },
       });
-      session.user = { id: user.id, ...dbUser };
+      session.user.id = dbUser?.id;
       return session;
     },
   },
