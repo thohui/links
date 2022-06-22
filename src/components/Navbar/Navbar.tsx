@@ -33,7 +33,7 @@ const NavbarItem = ({ loggedIn }: NavbarItemProps) => {
   }
   return (
     <Link href="/api/auth/signin">
-      <a className="btn">Shorten URL</a>
+      <a className="btn">Create Link</a>
     </Link>
   );
 };

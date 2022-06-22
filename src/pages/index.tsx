@@ -1,11 +1,18 @@
 import type { NextPage } from "next";
-import { Layout } from "../layout/Layout";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/router";
+import { Navbar } from "../components/navbar/Navbar";
 
 const Home: NextPage = () => {
+  const router = useRouter();
+  const session = useSession();
+  if (session.status === "authenticated") {
+    router.push("/dashboard");
+  }
   return (
-    <Layout>
-      <h1>hello</h1>
-    </Layout>
+    <>
+      <Navbar />
+    </>
   );
 };
 export default Home;
