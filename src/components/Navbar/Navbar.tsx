@@ -7,7 +7,7 @@ export const Navbar = () => {
   return (
     <div className="navbar bg-base bg-transparent">
       <div className="flex-1">
-        <a className="btn btn-ghost normal-case text-xl">Links</a>
+        <a className="btn btn-ghost normal-case text-3xl">Links</a>
       </div>
       <div className="flex-none">
         <ul className="menu menu-horizontal p-0">
@@ -26,14 +26,14 @@ interface NavbarItemProps {
 const NavbarItem = ({ loggedIn }: NavbarItemProps) => {
   if (loggedIn) {
     return (
-      <Link href="/dashboard">
-        <a className="btn">Dashboard</a>
+      <Link href="/api/auth/signout">
+        <a className="btn">Sign out</a>
       </Link>
     );
   }
   return (
     <Link href="/api/auth/signin">
-      <a className="btn">Sign in</a>
+      <a className="btn">Shorten URL</a>
     </Link>
   );
 };
