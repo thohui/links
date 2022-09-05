@@ -1,7 +1,5 @@
 # Links
 
-### I mainly built this to learn TRPC
-
 # Images
 
 ![my-links](https://user-images.githubusercontent.com/12649585/174926941-2e314b99-07bf-474e-a33a-8412e4f15546.png)
