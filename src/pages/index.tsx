@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
-import { Navbar } from "../components/navbar/Navbar";
+import { Navbar } from "../components/nav/Navbar";
 
 const Home: NextPage = () => {
   const router = useRouter();

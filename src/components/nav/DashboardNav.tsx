@@ -4,8 +4,7 @@ import { useRouter } from "next/router";
 export const DashboardNav = () => {
   const router = useRouter();
   const currentPath = router.pathname;
-  const isCreateLinkPage = currentPath === "/dashboard/create";
-  if (isCreateLinkPage) {
+  if (currentPath === "/dashboard/create") {
     return (
       <div className="flex flex-row">
         <Link href="/dashboard">

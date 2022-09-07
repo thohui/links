@@ -1,7 +1,7 @@
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { PropsWithChildren } from "react";
-import { Navbar } from "../components/navbar/Navbar";
+import { Navbar } from "../components/nav/Navbar";
 
 export const DashboardLayout = ({ children }: PropsWithChildren) => {
   const data = useSession();
